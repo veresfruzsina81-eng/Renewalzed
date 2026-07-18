@@ -1,4 +1,4 @@
-# VOID/CTRL
+# Renewalzed — VOID/CTRL
 
 Experimental 3D portfolio reference built with Three.js and Vite.
 
