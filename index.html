@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08080a" />
+    <meta name="description" content="VOID/CTRL — kísérleti digitális portfólió és interaktív 3D élmény." />
+    <title>VOID/CTRL — Enter the interface</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Ugrás a tartalomhoz</a>
+
+    <div id="boot" class="boot" role="dialog" aria-modal="true" aria-labelledby="boot-title">
+      <div class="boot__noise"></div>
+      <div class="boot__topline">
+        <span>VOID/CTRL®</span>
+        <span>EXPERIMENT 001</span>
+      </div>
+      <div class="boot__content">
+        <p class="eyebrow">A böngésződ most térré alakul.</p>
+        <h1 id="boot-title">Ne csak nézd.<br /><em>Lépj be.</em></h1>
+        <button id="enter" class="enter-button" type="button">
+          <span>Belépés a felületre</span>
+          <span aria-hidden="true">↗</span>
+        </button>
+        <p class="boot__hint">Hang ajánlott · fejhallgató opcionális</p>
+      </div>
+      <div class="boot__meter" aria-hidden="true"><span></span></div>
+    </div>
+
+    <canvas id="world" aria-hidden="true"></canvas>
+    <div class="aurora" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand magnetic" href="#home" aria-label="VOID CTRL kezdőlap">
+        <span class="brand__mark"></span>
+        <span>VOID/CTRL</span>
+      </a>
+      <nav class="nav" aria-label="Fő navigáció">
+        <a href="#work">Munkák</a>
+        <a href="#system">Rendszer</a>
+        <a href="#contact">Kapcsolat</a>
+      </nav>
+      <button id="sound" class="sound magnetic" type="button" aria-label="Hang bekapcsolása" aria-pressed="false">
+        <span class="sound__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="sound__label">Sound off</span>
+      </button>
+    </header>
+
+    <div class="portal-label" id="portal-label" aria-hidden="true">
+      <span class="portal-label__index">01</span>
+      <span class="portal-label__name">Selected work</span>
+      <span class="portal-label__action">click to enter ↗</span>
+    </div>
+
+    <main id="content">
+      <section id="home" class="chapter hero" data-scene="home">
+        <div class="hero__rail" aria-hidden="true">
+          <span>SCROLL TO SHIFT REALITY</span>
+          <i></i>
+        </div>
+        <div class="hero__copy">
+          <p class="kicker"><span>●</span> Independent digital experience</p>
+          <h1>Weboldalak,<br />amiknek <em>gravitációja</em> van.</h1>
+          <p class="hero__lead">Stratégia, design és interaktív 3D — egyetlen digitális térben. Ismerős webes logika, szokatlan fizika.</p>
+          <div class="hero__actions">
+            <a class="primary-cta magnetic" href="#work">Felfedezem <span>↓</span></a>
+            <button class="text-cta" id="randomize" type="button">Zavard meg a teret <span>✳</span></button>
+          </div>
+        </div>
+        <div class="hero__status">
+          <span>BUDAPEST / HU</span>
+          <span>47.4979° N</span>
+          <span>AVAILABLE 2026</span>
+        </div>
+      </section>
+
+      <section id="work" class="chapter work" data-scene="work">
+        <div class="section-head">
+          <p class="eyebrow">01 / Kiválasztott munkák</p>
+          <h2>Digitális<br /><em>portálok.</em></h2>
+          <p>Kattints a térben lebegő objektumokra, vagy válassz a projektek közül.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card project-card--wide" data-project="signal">
+            <div class="project-card__visual project-card__visual--signal">
+              <span class="orb"></span>
+              <p>SIGNAL/<br />ARCHIVE</p>
+              <span class="project-card__number">001</span>
+            </div>
+            <div class="project-card__meta">
+              <div><h3>Signal Archive</h3><p>Kulturális platform / web experience</p></div>
+              <button type="button" class="open-project">Projekt megnyitása ↗</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="matter">
+            <div class="project-card__visual project-card__visual--matter">
+              <div class="matter-core"></div>
+              <p>MATTER<br />IS DATA</p>
+              <span class="project-card__number">002</span>
+            </div>
+            <div class="project-card__meta">
+              <div><h3>Matter/OS</h3><p>AI termék / identity system</p></div>
+              <button type="button" class="open-project">Megnyitás ↗</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="pulse">
+            <div class="project-card__visual project-card__visual--pulse">
+              <div class="pulse-lines"><i></i><i></i><i></i><i></i><i></i></div>
+              <p>PULSE<br />NETWORK</p>
+              <span class="project-card__number">003</span>
+            </div>
+            <div class="project-card__meta">
+              <div><h3>Pulse Network</h3><p>Zene / interaktív kampány</p></div>
+              <button type="button" class="open-project">Megnyitás ↗</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="system" class="chapter system" data-scene="system">
+        <div class="system__intro">
+          <p class="eyebrow">02 / Hogyan dolgozunk</p>
+          <h2>Az interfész<br />nem dekoráció.<br /><em>Viselkedés.</em></h2>
+        </div>
+        <ol class="process-list">
+          <li><span>01</span><div><h3>Worldbuilding</h3><p>Megtaláljuk azt a vizuális törvényt, amitől a márkád világa felismerhető lesz.</p></div><b>↗</b></li>
+          <li><span>02</span><div><h3>Interaction</h3><p>A mozgás, hang és visszajelzés nem effekt: navigációs nyelv.</p></div><b>↗</b></li>
+          <li><span>03</span><div><h3>Performance</h3><p>A látvány mobilon is kontrollált, hozzáférhető és gyors marad.</p></div><b>↗</b></li>
+        </ol>
+      </section>
+
+      <section id="contact" class="chapter contact" data-scene="contact">
+        <div class="contact__orbit" aria-hidden="true"><span>START A PROJECT · START A PROJECT · </span></div>
+        <p class="eyebrow">03 / Következő dimenzió</p>
+        <h2>Van egy ötleted,<br />ami nem fér bele<br />egy <em>sablonba?</em></h2>
+        <a class="contact-link magnetic" href="mailto:hello@example.com">hello@example.com <span>↗</span></a>
+        <footer>
+          <span>VOID/CTRL © 2026</span>
+          <span>THREE.JS / NETLIFY READY</span>
+          <a href="#home">Vissza a tetejére ↑</a>
+        </footer>
+      </section>
+    </main>
+
+    <dialog id="project-modal" class="project-modal">
+      <button class="project-modal__close" type="button" aria-label="Bezárás">×</button>
+      <p class="eyebrow">CASE FILE / <span id="modal-index">001</span></p>
+      <h2 id="modal-title">Signal Archive</h2>
+      <p id="modal-copy">Egy spekulatív digitális archívum, ahol a tartalom térbeli jelekként válik felfedezhetővé.</p>
+      <dl>
+        <div><dt>Szerep</dt><dd>Strategy / Design / Development</dd></div>
+        <div><dt>Technológia</dt><dd>Three.js / WebGL / Spatial audio</dd></div>
+        <div><dt>Év</dt><dd>2026</dd></div>
+      </dl>
+      <a href="#contact" class="primary-cta modal-contact">Hasonlót szeretnék <span>↗</span></a>
+    </dialog>
+
+    <div class="cursor" aria-hidden="true"><span></span></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
