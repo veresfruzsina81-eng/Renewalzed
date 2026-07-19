@@ -1,8 +1,8 @@
 # Renewalzed — MealStudio Villa
 
-Cinematic, explorable 3D studio website built with Three.js and Vite.
+Cinematic, lightweight studio website built with Vite and pre-rendered visual environments.
 
-The experience begins outside a sunset luxury villa with a custom 3D supercar. After entering, the camera moves through the opening glass door into a fully interactive 3D MealStudio showroom.
+The experience begins outside a mysterious creative manor. Selecting ENTER triggers a cinematic camera transition through the central door into an interactive MealStudio great room. The experience uses optimized WebP environments and CSS transforms instead of continuous WebGL rendering.
 
 ## Local development
 
@@ -22,5 +22,6 @@ The repository includes `netlify.toml`; importing it into Netlify is enough for 
 ## Content editing
 
 - Interface copy and links: `index.html`
-- Villa, car, camera path and 3D showroom: `src/main.js`
+- Entrance transition, room portals and sound: `src/main.js`
 - Colors and layout: `src/styles.css`
+- Generated environment assets: `public/assets/`

@@ -3,99 +3,108 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#12091d" />
-    <meta name="description" content="MealStudio — cinematic 3D digital experience studio." />
-    <title>MealStudio — Enter the villa</title>
+    <meta name="theme-color" content="#030b0c" />
+    <meta name="description" content="MealStudio — enter a different kind of digital studio." />
+    <link rel="preload" as="image" href="/assets/mealstudio-exterior.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/assets/mealstudio-interior.webp" type="image/webp" />
+    <title>MealStudio — Enter</title>
   </head>
-  <body>
-    <div class="sky" aria-hidden="true"></div>
-    <canvas id="world" aria-label="Interaktív 3D MealStudio villa"></canvas>
-    <div class="vignette" aria-hidden="true"></div>
-    <div class="grain" aria-hidden="true"></div>
+  <body data-scene="exterior">
+    <main class="experience" aria-live="polite">
+      <div class="scene scene--exterior" aria-hidden="true">
+        <img src="/assets/mealstudio-exterior.webp" alt="" fetchpriority="high" />
+      </div>
+      <div class="scene scene--interior" aria-hidden="true">
+        <img src="/assets/mealstudio-interior.webp" alt="" />
+      </div>
+      <div class="atmosphere" aria-hidden="true"></div>
+      <div class="vignette" aria-hidden="true"></div>
+      <div class="grain" aria-hidden="true"></div>
 
-    <section id="intro" class="intro" aria-labelledby="intro-title">
-      <div class="intro__top">
-        <a class="wordmark" href="#" aria-label="MealStudio kezdőlap">
-          <span class="wordmark__icon">M</span>
-          <span>MEAL/STUDIO</span>
-        </a>
-        <div class="intro__location">
-          <span>PRIVATE PROPERTY</span>
-          <span>PACIFIC COAST · 20:46</span>
+      <section id="entrance" class="entrance" aria-labelledby="entrance-title">
+        <header class="topbar">
+          <a class="brand" href="#" aria-label="MealStudio kezdőlap">
+            <span class="brand__mark">M</span>
+            <span>MEAL/STUDIO</span>
+          </a>
+          <div class="coordinates"><span>47.4979° N</span><span>19.0402° E</span></div>
+          <button class="sound" type="button" aria-pressed="true"><i></i><span>SOUND ON</span></button>
+        </header>
+
+        <div class="entrance__center">
+          <p>AN INTERACTIVE DIGITAL HOUSE</p>
+          <h1 id="entrance-title">MealStudio</h1>
+          <button id="enter" class="enter" type="button">
+            <span>ENTER</span>
+            <i aria-hidden="true">→</i>
+          </button>
         </div>
+
+        <footer class="entrance__footer">
+          <p><span>01</span> Approach the house</p>
+          <p><span>02</span> Enter the studio</p>
+          <p><span>03</span> Explore the rooms</p>
+          <p class="entrance__edition">EXPERIENCE / 001</p>
+        </footer>
+      </section>
+
+      <div id="transition" class="transition" aria-hidden="true">
+        <div class="transition__reticle"><i></i><i></i></div>
+        <p>ENTERING MEAL/STUDIO</p>
+        <div class="transition__line"><i></i></div>
       </div>
 
-      <div class="intro__copy">
-        <p class="chapter-label"><i></i> INTERACTIVE EXPERIENCE / 001</p>
-        <h1 id="intro-title">Ideas need<br /><em>a place</em><br />to live.</h1>
-        <p class="intro__lead">A MealStudio digitális világokat épít. Ez nem landing page — ez a bejárat.</p>
-        <button id="enter" class="enter-button" type="button">
-          <span>Belépés az oldalra</span>
-          <span class="enter-button__arrow">→</span>
-        </button>
-      </div>
+      <section id="showroom" class="showroom" aria-labelledby="showroom-title">
+        <header class="topbar">
+          <button id="back" class="brand brand--button" type="button" aria-label="Vissza a bejárathoz">
+            <span class="brand__mark">M</span>
+            <span>MEAL/STUDIO</span>
+          </button>
+          <div class="room-title"><span>01</span><span>THE GREAT ROOM</span></div>
+          <button class="sound" type="button" aria-pressed="true"><i></i><span>SOUND ON</span></button>
+        </header>
 
-      <div class="intro__footer">
-        <div><span>01</span><p>Érkezz meg<br />a villához</p></div>
-        <div><span>02</span><p>Lépj be<br />a stúdióba</p></div>
-        <div><span>03</span><p>Fedezd fel<br />a világunkat</p></div>
-        <p class="intro__control">MOZGASD AZ EGERET <b>+</b> KATTINTS</p>
-      </div>
-    </section>
+        <div class="showroom__intro">
+          <p class="eyebrow">SELECT A PORTAL</p>
+          <h2 id="showroom-title">Where should<br />we begin?</h2>
+        </div>
 
-    <header id="hud" class="hud">
-      <a class="wordmark" href="#" aria-label="MealStudio">
-        <span class="wordmark__icon">M</span>
-        <span>MEAL/STUDIO</span>
-      </a>
-      <div class="hud__scene">
-        <span id="scene-number">00</span>
-        <span id="scene-name">ARRIVAL</span>
-      </div>
-      <button id="sound" class="sound" type="button" aria-label="Hang kikapcsolása" aria-pressed="true">
-        <span class="sound__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-        <span id="sound-label">SOUND ON</span>
-      </button>
-    </header>
+        <div class="hotspots" aria-label="MealStudio területek">
+          <button class="hotspot hotspot--work" type="button" data-room="work">
+            <span>01</span><i></i><strong>PROJECTS</strong><small>Selected digital worlds</small>
+          </button>
+          <button class="hotspot hotspot--services" type="button" data-room="services">
+            <span>02</span><i></i><strong>SERVICES</strong><small>What we build</small>
+          </button>
+          <button class="hotspot hotspot--studio" type="button" data-room="studio">
+            <span>03</span><i></i><strong>STUDIO</strong><small>Who we are</small>
+          </button>
+          <button class="hotspot hotspot--contact" type="button" data-room="contact">
+            <span>04</span><i></i><strong>CONTACT</strong><small>Start a project</small>
+          </button>
+        </div>
 
-    <div id="journey" class="journey" aria-live="polite">
-      <div class="journey__meta"><span>ENTERING MEAL/STUDIO</span><span id="journey-value">00%</span></div>
-      <div class="journey__bar"><i id="journey-progress"></i></div>
-      <button id="skip" type="button">SKIP INTRO →</button>
-    </div>
+        <footer class="showroom__footer">
+          <span>MOVE TO LOOK AROUND</span>
+          <span>CLICK A PORTAL TO OPEN</span>
+        </footer>
+      </section>
 
-    <div id="interior-ui" class="interior-ui">
-      <p class="interior-ui__hint"><span></span> Válassz egy tárgyat a térben</p>
-      <nav class="room-nav" aria-label="Stúdióterek">
-        <button type="button" data-room="work"><span>01</span> Projektek</button>
-        <button type="button" data-room="services"><span>02</span> Szolgáltatások</button>
-        <button type="button" data-room="studio"><span>03</span> A stúdió</button>
-        <button type="button" data-room="contact"><span>04</span> Kapcsolat</button>
-      </nav>
-    </div>
+      <aside id="panel" class="panel" aria-labelledby="panel-title">
+        <button id="panel-close" class="panel__close" type="button" aria-label="Bezárás">×</button>
+        <p id="panel-index" class="eyebrow">01 / PROJECTS</p>
+        <h2 id="panel-title">Digital worlds<br />with a pulse.</h2>
+        <p id="panel-copy">Nem egyszerű oldalakat, hanem emlékezetes digitális helyeket tervezünk.</p>
+        <ul id="panel-list">
+          <li>Immersive portfolios</li>
+          <li>Interactive campaigns</li>
+          <li>Product experiences</li>
+        </ul>
+        <a id="panel-link" href="mailto:hello@mealstudio.hu">START A PROJECT <span>↗</span></a>
+      </aside>
 
-    <aside id="info-panel" class="info-panel" aria-labelledby="panel-title">
-      <button id="panel-close" class="info-panel__close" type="button" aria-label="Panel bezárása">×</button>
-      <p class="chapter-label"><i></i> <span id="panel-index">01 / SELECTED WORK</span></p>
-      <h2 id="panel-title">Worlds,<br />not pages.</h2>
-      <p id="panel-copy">Márkákból bejárható, emlékezetes digitális helyeket építünk.</p>
-      <ul id="panel-list">
-        <li>Interactive direction</li>
-        <li>3D web development</li>
-        <li>Motion & sound</li>
-      </ul>
-      <a id="panel-link" href="mailto:hello@mealstudio.hu">Projektet indítok <span>↗</span></a>
-    </aside>
-
-    <div id="object-label" class="object-label" aria-hidden="true">
-      <span id="object-index">01</span>
-      <strong id="object-name">PROJECTS</strong>
-      <small>CLICK TO EXPLORE</small>
-    </div>
-
-    <div id="crosshair" class="crosshair" aria-hidden="true"><i></i><i></i></div>
-    <div id="flash" class="flash" aria-hidden="true"></div>
-
+      <div class="cursor" aria-hidden="true"><i></i></div>
+    </main>
     <noscript>Az élmény megtekintéséhez JavaScript szükséges.</noscript>
     <script type="module" src="/src/main.js"></script>
   </body>
